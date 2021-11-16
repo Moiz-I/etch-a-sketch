@@ -5,6 +5,9 @@ const clear = document.getElementById("clear");
 const slider = document.getElementById("slider");
 const output = document.getElementById("output")
 const grids = document.querySelectorAll("div.grid-item");
+const colorButton = document.getElementById("color-button") 
+
+console.log(colorButton.value)
 
 makeRows(16, 16);
 
@@ -14,7 +17,7 @@ function makeRows(rows, cols) {
   for (c = 0; c < (rows * cols); c++) {
     let cell = document.createElement("div");
     cell.addEventListener('mouseover', function (e) {
-      e.target.style.background = "red";
+      e.target.style.background = colorButton.value;
     })
     container.appendChild(cell).className = "grid-item";
   };
