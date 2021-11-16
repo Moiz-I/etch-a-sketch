@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {  /*applied globally*/
+  --grid-cols: 1; /*create variables*/
+  --grid-rows: 1;
+} 
+
+#grid-container {
+  display: grid;
+  grid-template-rows: repeat(var(--grid-rows), 1fr); /*calling our global variable*/
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  width: 500px;
+  height: 500px;
+  justify-content: center;
+  margin: 70px auto;
+}
+
+.grid-item {
+  padding: 0.1em;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.settings {
+  flex-direction: column;
+}
+
+button {
+  margin: 0;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.slider-container {
+  width: 80%; /* Width of the outside container */
+  justify-content: center;
+  margin-left: 150px;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 15px; /* Specified height */
+  border-radius: 5px;
+  background: #ff9b9b; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  border-radius: 50%; 
+  background: #93a8a0; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+#output {
+  margin: 0;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: larger;
+  color:rgb(255, 110, 110)
+}
